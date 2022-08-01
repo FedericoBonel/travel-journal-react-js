@@ -1,33 +1,43 @@
 {
-    "trips": [
-        {
-            "id": 1,
-            "country": "Japan",
-            "date": "2022-08-01T12:21:40+09:00",
-            "daysDuration": 3,
-            "destinationName": "Mount Fuji",
-            "imgUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzMzOTgxMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
-            "tripNotes": "Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists."
-        },
-
-        {
-            "id": 2,
-            "country": "Australia",
-            "date": "2022-08-01T12:21:40+09:00",
-            "daysDuration": 3,
-            "destinationName": "Sydney Opera House",
-            "imgUrl": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzM0MDA3OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
-            "tripNotes":"The Sydney Opera House is a multi-venue performing arts centre in Sydney. Located on the banks of the Sydney Harbour, it is often regarded as one of the 20th century's most famous and distinctive buildings"
-        },
-
-        {
-            "id": 3,
-            "country": "Norway",
-            "date": "2022-08-01T12:21:40+09:00",
-            "daysDuration": 3,
-            "destinationName": "Geirangerfjord",
-            "imgUrl": "https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzM0MDA3OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
-            "tripNotes":"The Geiranger Fjord is a fjord in the Sunnmøre region of Møre og Romsdal county, Norway. It is located entirely in the Stranda Municipality."
-        }
-    ]
+  "trips": [
+    {
+      "id": 1,
+      "country": "Japan",
+      "startDate": "2022-08-01T12:21:40+09:00",
+      "finishDate": "2022-08-03T12:21:40+09:00",
+      "daysDuration": 3,
+      "destinationName": "Mount Fuji",
+      "imgUrl": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzMzOTgxMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "tripNotes": "Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists."
+    },
+    {
+      "id": 2,
+      "country": "Australia",
+      "startDate": "2022-08-01T12:21:40+09:00",
+      "finishDate": "2022-08-03T12:21:40+09:00",
+      "daysDuration": 3,
+      "destinationName": "Sydney Opera House",
+      "imgUrl": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzM0MDA3OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "tripNotes": "The Sydney Opera House is a multi-venue performing arts centre in Sydney. Located on the banks of the Sydney Harbour, it is often regarded as one of the 20th century's most famous and distinctive buildings"
+    },
+    {
+      "id": 3,
+      "country": "Norway",
+      "startDate": "2022-08-01T12:21:40+09:00",
+      "finishDate": "2022-08-03T12:21:40+09:00",
+      "daysDuration": 3,
+      "destinationName": "Geirangerfjord",
+      "imgUrl": "https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNzM0MDA3OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+      "tripNotes": "The Geiranger Fjord is a fjord in the Sunnmøre region of Møre og Romsdal county, Norway. It is located entirely in the Stranda Municipality."
+    },
+    {
+      "country": "Argentina",
+      "startDate": "2022-08-01T09:07:43.409Z",
+      "finishDate": "2022-08-01T09:07:43.409Z",
+      "destinationName": "Casa Rosada",
+      "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Casa_Rosada_exterior_from_Plaza_de_Mayo.JPG",
+      "tripNotes": "Went with Haru, it was a precious and amazing time together, showing her my home country.",
+      "id": 4
+    }
+  ]
 }

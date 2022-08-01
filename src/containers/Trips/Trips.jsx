@@ -1,8 +1,9 @@
+import React from "react";
 import "./Trips.css";
 import Trip from "../../components/Trip/Trip";
 
-const Trips = ({ trips }) => {
-    const renderedTrips = trips.map((trip) => <Trip trip={trip} />);
+let Trips = ({ trips }) => {
+    const renderedTrips = trips.map((trip) => <Trip trip={trip} key={trip.id}/>);
 
     return (
         <div className="trips-container">
@@ -11,4 +12,4 @@ const Trips = ({ trips }) => {
     );
 };
 
-export default Trips;
+export default React.memo(Trips);

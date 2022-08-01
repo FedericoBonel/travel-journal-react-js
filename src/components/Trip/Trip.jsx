@@ -1,17 +1,17 @@
+import React from "react";
 import "./Trip.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Trip = ({ trip }) => {
-    const startDate = new Date(trip.date);
-    const finishDate = new Date(startDate);
-    finishDate.setDate(finishDate.getDate() + trip.daysDuration);
+let Trip = ({ trip }) => {
+    const startDate = new Date(trip.startDate);
+    const finishDate = new Date(trip.finishDate);
 
     return (
         <article className="trip-container">
             <div className="trip-container_content">
                 <img src={trip.imgUrl} alt="trip-img" />
-                <div className="trip-container_text">
+                <div className="trip-container_content-text">
                     <div className="trip-container_content-text_location">
                         <p>
                             <FontAwesomeIcon
@@ -47,4 +47,4 @@ const Trip = ({ trip }) => {
     );
 };
 
-export default Trip;
+export default React.memo(Trip);;

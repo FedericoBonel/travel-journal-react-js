@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './containers/Navbar/Navbar';
+import TripForm from './containers/TripForm/TripForm';
 import Trips from "./containers/Trips/Trips";
 import { getTrips } from './api/TripsAPI';
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <TripForm trips={trips} setTrips={setTrips}/>
       <Trips trips={trips}/>
     </div>
   );
