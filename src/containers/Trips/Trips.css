@@ -1,0 +1,11 @@
+.trips-container {
+    margin: 45px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.trips-container_list {
+    width: 90%;
+}
