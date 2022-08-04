@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <TripForm trips={trips} setTrips={setTrips}/>
+      <TripForm setTrips={setTrips}/>
       <Trips trips={trips}/>
     </div>
   );

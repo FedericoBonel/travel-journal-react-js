@@ -38,6 +38,15 @@
       "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Casa_Rosada_exterior_from_Plaza_de_Mayo.JPG",
       "tripNotes": "Went with Haru, it was a precious and amazing time together, showing her my home country.",
       "id": 4
+    },
+    {
+      "country": "Japan",
+      "startDate": "2022-08-03T02:16:01.103Z",
+      "finishDate": "2022-08-03T02:16:01.103Z",
+      "destinationName": "Fushimi Inari",
+      "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg",
+      "tripNotes": "We went there after the covid 19 pandemic; there were no tourists, and it was magical to see these spots so empty and filled with nature",
+      "id": 5
     }
   ]
 }

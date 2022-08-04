@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 
-const TripForm = ({ trips, setTrips }) => {
+const TripForm = ({ setTrips }) => {
     const [displayForm, setDisplayForm] = useState(false);
     const [imgUrl, setImgUrl] = useState("");
     const [country, setCountry] = useState("");
@@ -37,7 +37,7 @@ const TripForm = ({ trips, setTrips }) => {
         setImgUrl("");
         setTripDate([new Date(), new Date()]);
 
-        setTrips([...trips, newTrip]);
+        setTrips((oldTrips) => [...oldTrips, newTrip]);
 
         console.log("New trip added!");
     };
