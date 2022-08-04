@@ -10,45 +10,56 @@ import Calendar from "react-calendar";
 
 const TripForm = ({ setTrips }) => {
     const [displayForm, setDisplayForm] = useState(false);
-    const [imgUrl, setImgUrl] = useState("");
-    const [country, setCountry] = useState("");
-    const [name, setName] = useState("");
-    const [notes, setNotes] = useState("");
-    const [tripDate, setTripDate] = useState([new Date(), new Date()]);
+    const [trip, setTrip] = useState({
+        imgUrl: "",
+        country: "",
+        destinationName: "",
+        tripNotes: "",
+        tripDate: [new Date(), new Date()],
+    });
+
+    const handleForm = (event) =>
+        setTrip((prevTrip) => ({
+            ...prevTrip,
+            [event.target.name]: event.target.value,
+        }));
 
     const canSaveTrip =
-        Boolean(country) && Boolean(name) && Boolean(notes) && Boolean(imgUrl);
+        Boolean(trip.country) &&
+        Boolean(trip.destinationName) &&
+        Boolean(trip.tripNotes) &&
+        Boolean(trip.imgUrl);
 
     const uploadTrip = async (e) => {
         e.preventDefault();
 
         const newTrip = await addTrip({
-            country,
-            startDate: tripDate[0].toISOString(),
-            finishDate: tripDate[1].toISOString(),
-            destinationName: name,
-            imgUrl,
-            tripNotes: notes,
+            country: trip.country,
+            startDate: trip.tripDate[0].toISOString(),
+            finishDate: trip.tripDate[1].toISOString(),
+            destinationName: trip.destinationName,
+            imgUrl: trip.imgUrl,
+            tripNotes: trip.tripNotes,
         });
 
-        setCountry("");
-        setName("");
-        setNotes("");
-        setImgUrl("");
-        setTripDate([new Date(), new Date()]);
+        setTrip({
+            imgUrl: "",
+            country: "",
+            destinationName: "",
+            tripNotes: "",
+            tripDate: [new Date(), new Date()],
+        });
 
         setTrips((oldTrips) => [...oldTrips, newTrip]);
-
-        console.log("New trip added!");
     };
 
-    const renderedCountries = (
+    const countryOptions = (
         <select
             className="form-input_field"
             name="country"
             id="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
+            value={trip.country}
+            onChange={handleForm}
         >
             <option>-- Destination country --</option>
             {countryList.map((country) => (
@@ -63,52 +74,64 @@ const TripForm = ({ setTrips }) => {
         <form className="form-container_form-content swing-in-top-fwd">
             <div className="form-input">
                 <label htmlFor="country">Country: </label>
-                {renderedCountries}
+                {countryOptions}
             </div>
             <div className="form-input">
-                <label htmlFor="destination-name">Image Url: </label>
+                <label htmlFor="img-url">Image Url: </label>
                 <input
                     className="form-input_field"
+                    name="imgUrl"
                     id="img-url"
                     type="text"
                     placeholder="https://images.com/123uaushaWJHb"
-                    value={imgUrl}
-                    onChange={(e) => setImgUrl(e.target.value)}
+                    value={trip.imgUrl}
+                    onChange={handleForm}
                 />
             </div>
             <div className="form-input">
                 <label htmlFor="destination-name">Destination Name: </label>
                 <input
                     className="form-input_field"
+                    name="destinationName"
                     id="destination-name"
                     type="text"
                     placeholder="Mount Fuji..."
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={trip.destinationName}
+                    onChange={handleForm}
                 />
             </div>
             <label htmlFor="date">Dates: </label>
             <Calendar
                 id="date"
-                onChange={setTripDate}
-                value={tripDate}
                 selectRange
                 className="form-input_field"
+                value={trip.tripDate}
+                onChange={(value, event) =>
+                    handleForm({
+                        ...event,
+                        target: {
+                            ...event.target,
+                            name: "tripDate",
+                            value,
+                        },
+                    })
+                }
             />
             <div className="form-input">
                 <label htmlFor="notes">Trip Notes: </label>
                 <textarea
                     className="form-input_field"
-                    id="notes"
+                    name="tripNotes"
+                    id="tripNotes"
                     placeholder="Amazing reunion trip with my college friends..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
+                    value={trip.tripNotes}
+                    onChange={handleForm}
                 />
             </div>
             <button
                 disabled={!canSaveTrip}
                 className="submit-btn"
-                onClick={(e) => uploadTrip(e)}
+                onClick={uploadTrip}
             >
                 Add
             </button>
