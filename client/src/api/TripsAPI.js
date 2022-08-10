@@ -1,4 +1,4 @@
-const baseTripsURL = "http://localhost:3500/trips";
+const baseTripsURL = "http://localhost:8080/api/v1/trips";
 
 export const getTrips = async () => {
     try {

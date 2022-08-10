@@ -51,6 +51,7 @@ const TripForm = ({ setTrips }) => {
         });
 
         setTrips((oldTrips) => [...oldTrips, newTrip]);
+        setDisplayForm(false);
     };
 
     const countryOptions = (
