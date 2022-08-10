@@ -1,8 +1,8 @@
-const baseTripsURL = "http://localhost:8080/api/v1/trips";
+const TRIPS_URL = "http://localhost:8080/api/v1/trips";
 
 export const getTrips = async () => {
     try {
-        const response = await fetch(baseTripsURL, {
+        const response = await fetch(TRIPS_URL, {
             method: "GET",
             headers: {
                 accept: "application/json",
@@ -18,7 +18,7 @@ export const getTrips = async () => {
 
 export const addTrip = async (trip) => {
     try {
-        const response = await fetch(baseTripsURL, {
+        const response = await fetch(TRIPS_URL, {
             method: "POST",
             headers: {
                 accept: "application/json",

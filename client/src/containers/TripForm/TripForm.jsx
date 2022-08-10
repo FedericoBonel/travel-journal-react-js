@@ -1,15 +1,16 @@
 import "./TripForm.css";
 import "./Calendar.css";
-import { countryList } from "./Countries";
 import { addTrip } from "../../api/TripsAPI";
+import { getCountryNames } from "../../api/CountriesAPI";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 
 const TripForm = ({ setTrips }) => {
     const [displayForm, setDisplayForm] = useState(false);
+    const [countryList, setCountryList] = useState([]);
     const [trip, setTrip] = useState({
         imgUrl: "",
         country: "",
@@ -17,6 +18,16 @@ const TripForm = ({ setTrips }) => {
         tripNotes: "",
         tripDate: [new Date(), new Date()],
     });
+
+    useEffect(() => {
+        const fetchCountries = async () => {
+            const countries = await getCountryNames();
+
+            setCountryList(countries);
+        }
+
+        fetchCountries();
+    }, []);
 
     const handleForm = (event) =>
         setTrip((prevTrip) => ({
