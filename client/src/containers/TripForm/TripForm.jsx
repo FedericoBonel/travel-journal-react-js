@@ -41,8 +41,8 @@ const TripForm = ({ setTrips }) => {
         Boolean(trip.tripNotes) &&
         Boolean(trip.imgUrl);
 
-    const uploadTrip = async (e) => {
-        e.preventDefault();
+    const uploadTrip = async (event) => {
+        event.preventDefault();
 
         const newTrip = await addTrip({
             country: trip.country,

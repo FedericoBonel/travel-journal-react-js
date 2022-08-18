@@ -10,7 +10,7 @@ let Trip = ({ trip }) => {
     return (
         <article className="trip-container">
             <div className="trip-container_content">
-                <img src={trip.imgUrl} alt="trip-img" />
+                <img src={trip.imgUrl ? trip.imgUrl : "https://placehold.jp/150x150.png"} alt="trip-img" />
                 <div className="trip-container_content-text">
                     <div className="trip-container_content-text_location">
                         <p>
